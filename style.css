@@ -1,0 +1,298 @@
+:root {
+    /* Colors */
+    --primary-color: #00add8; /* Darker blue for better contrast */
+    --secondary-color: #333333; /* Dark gray for secondary elements */
+    --text-color: #333333; /* Dark gray text */
+    --background-color: #ffffff; /* Light background */
+    --card-background-color: #f9f9f9; /* Slightly darker for cards */
+    --box-shadow-color: rgba(0, 0, 0, 0.1); /* Dark shadow for depth */
+    --border-color: #cccccc; /* Lighter border for subtle contrast */
+
+    /* Font Sizes */
+    --font-size-base: 16px;
+    --font-size-title: 24px;
+    --font-size-subtitle: 18px;
+    --font-size-small: 14px;
+    --font-size-duration: 10px;
+    /* Font Families */
+    --font-family-base: 'Roboto', sans-serif;
+
+    /* Spacing */
+    --spacing-small: 10px;
+    --spacing-medium: 20px;
+    --spacing-large: 40px;
+    --spacing-vertical: 15px;
+
+    /* Border Radius */
+    --border-radius: 0px; /* Set to 0 for sharp borders */
+    --border-radius-circle: 80%;
+
+    /* Profile Image Size */
+    --profile-pic-size: 250px;
+    --profile-pic-border: 4px;
+
+    /* Icon Size */
+    --icon-size: 24px;
+
+    /* Card Size */
+    --card-max-width: 1200px;
+
+    /* Column Widths */
+    --column-width-1: 1fr;
+    --column-width-2: 1fr;
+    --column-width-3: 1fr;
+}
+
+.company-name {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.company-name:hover {
+    color: var(--primary-color); /* Change to primary color on hover */
+}
+
+.duration {
+    color: var(--secondary-color);
+    font-size: var(--font-size-duration);
+    font-weight: 800;
+    float: right;
+    vertical-align: middle;
+    margin-top: 6px;
+}
+
+.company-name-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.highlight-java {
+    background-color: #f89820; /* Java's orange color */
+    font-weight: bold;
+    color: #ffffff; /* Light text for better contrast */
+    padding: 0 4px;
+    border-radius: 4px;
+}
+
+.highlight-go {
+    background-color: #00add8; /* Go's blue color */
+    font-weight: bold;
+    color: #ffffff; /* Light text for better contrast */
+    padding: 0 4px;
+    border-radius: 4px;
+}
+
+/* Utility Classes */
+.u-text-center { text-align: center; }
+.u-flex { display: flex; }
+.u-flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.u-justify-space-between { justify-content: space-between; }
+.u-margin-small { margin: var(--spacing-small); }
+.u-padding-small { padding: var(--spacing-small); }
+.u-padding-medium { padding: var(--spacing-medium); }
+.u-gap-small { gap: var(--spacing-small); }
+
+/* Global Styles */
+body {
+    font-family: var(--font-family-base);
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Portfolio Container */
+.portfolio-container {
+    max-width: var(--card-max-width);
+    margin: 0 auto;
+    padding: var(--spacing-medium);
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: var(--column-width-1) var(--column-width-2) var(--column-width-3);
+    gap: var(--spacing-vertical);
+    align-items: start;
+}
+
+/* Portfolio Card Styles */
+.portfolio-card {
+    background-color: var(--card-background-color);
+    border: 1px solid var(--border-color); /* Add border */
+    border-radius: var(--border-radius); /* Use sharp borders */
+    box-shadow: 0 1px 3px var(--box-shadow-color); /* Reduce box shadow */
+    padding: var(--spacing-medium);
+    height: fit-content;
+    margin-bottom: var(--spacing-vertical);
+}
+
+/* Main Profile Card */
+.main-profile .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-medium);
+}
+
+.contact-info a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.social-icons {
+    display: flex;
+    gap: var(--spacing-small);
+}
+
+.icon img {
+    width: var(--icon-size);
+    height: var(--icon-size);
+}
+
+.profile-info {
+    text-align: center;
+}
+
+.profile-pic img {
+    width: var(--profile-pic-size);
+    height: var(--profile-pic-size);
+    border-radius: var(--border-radius-circle);
+    border: var(--profile-pic-border) solid var(--border-color);
+    margin-bottom: var(--spacing-small);
+}
+
+.tech-logo {
+    --size-multiplier: 1.35;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: calc(var(--spacing-small) * var(--size-multiplier));
+    justify-content: center;
+    margin-top: calc(var(--spacing-medium) * var(--size-multiplier));
+    overflow-x: auto;
+    transform: scale(var(--size-multiplier));
+    transform-origin: center;
+}
+
+.tech-logos img {
+    width: var(--icon-size);
+    height: var(--icon-size);
+    object-fit: contain;
+}
+
+
+.profile-info h1 {
+    margin: 0;
+    color: var(--secondary-color);
+    font-size: var(--font-size-title);
+    font-weight: 700;
+}
+
+/* Section Styles */
+.portfolio-card h2 {
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: var(--spacing-small);
+    margin-top: 0;
+}
+
+/* Center-align specific card headings */
+.about-section h2,
+.education-section h2,
+.career-highlights-section h2,
+.selected-projects-section h2 {
+    text-align: center;
+}
+
+/* Experience Styles */
+.experience {
+    margin-bottom: var(--spacing-medium);
+}
+
+.experience h3 {
+    color: var(--secondary-color);
+    margin-bottom: var(--spacing-small);
+    
+}
+
+.experience h4 {
+    color: var(--primary-color);
+    margin: var(--spacing-small) 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.expand-btn {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    font-size: var(--font-size-title);
+}
+
+.role-details {
+    display: none;
+    margin-top: var(--spacing-small);
+}
+
+/* Project Styles */
+.project {
+    margin-bottom: var(--spacing-medium);
+}
+
+.project h3 {
+    color: var(--secondary-color);
+}
+
+/* Education Styles */
+.education h3 {
+    color: var(--secondary-color);
+    margin-bottom: var(--spacing-small);
+}
+
+/* Column Layout */
+.main-profile {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.about-section {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.education-section {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.career-highlights-section {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+}
+
+.selected-projects-section {
+    grid-column: 3;
+    grid-row: 1 / span 3;
+}
+
+@media (max-width: 1024px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+}
